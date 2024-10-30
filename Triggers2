@@ -1,0 +1,7 @@
+trigger LeadAssignmentTrigger on Lead (before insert) {
+    for (Lead lead : Trigger.new) {
+        if (lead.Country == 'USA') {
+            lead.OwnerId = '0051U000007abcXYZ'; // Owner ID
+        }
+    }
+}
